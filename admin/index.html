@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Panel</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body bgcolor="#3d4152">
+<div class="top-panel">
+      <div class="logo">Admin Panel</div>
+    </div>
+<main>
+<h2><u>Employee</u></h2>
+<section class="menu-content">
+<div class="sub-menu">
+<button type="button" onclick="openAddEmployeeForm()">Add Employee</button>
+</div>
+
+<div class="sub-menu">
+<button type="button" class="edit-employee-button" onclick="openEditEmployeeForm()">Edit Employee</button>
+</div>
+<div class="sub-menu">
+<button type="button" class="delete-employee-button" onclick="openDeleteEmployeeForm()">Delete Employee</button>
+</div>
+</section>
+<br><br>
+<br>
+<hr width="75%">
+<br>
+<h2><u>Financial  Ratios</u></h2>
+<section class="menu-content">
+ <div class="sub-menu">       
+<button type="button" class="add-financial-ratio-button" onclick="openAddForm('FinancialRatio')">Add Financial Ratio</button>
+</div>
+<div class="sub-menu">
+<button type="button" class="edit-financial-ratio-button" onclick="openEditForm('FinancialRatio')">Edit Financial Ratio</button>
+</div>
+<div class="sub-menu">
+<button type="button" class="delete-financial-ratio-button" onclick="openDeleteForm('FinancialRatio')">Delete Financial Ratio</button>
+</div>
+</section>
+<br>
+<br>
+<hr width="75%">
+<br>
+
+
+<h2><u>Financial Data</u></h2>
+<section class="menu-content">
+<div class="sub-menu">
+<button type="button" class="add-financial-data-button" onclick="openAddForm('FinancialData')">Add Financial Data</button>
+</div>
+<div class="sub-menu">
+<button type="button" class="edit-financial-data-button" onclick="openEditForm('FinancialData')">Edit Financial Data</button>
+</div>
+<div class="sub-menu">
+<button type="button" class="delete-financial-data-button" onclick="openDeleteForm('FinancialData')">Delete Financial Data</button>
+</div>
+</section>
+<br>
+<br>
+<hr width="75%">
+<br>
+
+<h2><u>Operational Data</u></h2>
+<section class="menu-content">
+ <div class="sub-menu">
+<button type="button" class="add-operational-data-button" onclick="openAddForm('OperationalData')">Add Operational Data</button>
+</div>
+<div class="sub-menu">
+<button type="button" class="edit-operational-data-button" onclick="openEditForm('OperationalData')">Edit Operational Data</button>
+</div>
+<div class="sub-menu">
+<button type="button" class="delete-operational-data-button" onclick="openDeleteForm('OperationalData')">Delete Operational Data</button>
+<br></div>
+</section>
+<br>
+<br>
+<hr width="75%">
+<br>
+<h2><u>Profit Data</u></h2>
+<section class="menu-content">
+ <div class="sub-menu">
+<button type="button" class="add-profit-data-button" onclick="openAddForm('ProfitData')">Add Profit Data</button></div>
+<div class="sub-menu">
+<button type="button" class="edit-profit-data-button" onclick="openEditForm('ProfitData')">Edit Profit Data</button>
+</div>
+<div class="sub-menu">
+<button type="button" class="delete-profit-data-button" onclick="openDeleteForm('ProfitData')">Delete Profit Data</button>
+</div>
+</section>
+<br>
+<br>
+<hr width="75%">
+<br>
+
+<h2><u>Sales Data</u></h2>
+<section class="menu-content">
+ <div class="sub-menu">
+<button type="button" class="add-sales-data-button" onclick="openAddForm('SalesData')">Add Sales Data</button>
+</div>
+<div class="sub-menu">
+<button type="button" class="edit-sales-data-button" onclick="openEditForm('SalesData')">Edit Sales Data</button>
+</div>
+<div class="sub-menu">
+<button type="button" class="delete-sales-data-button" onclick="openDeleteForm('SalesData')">Delete Sales Data</button>
+</div>
+</section>
+<br>
+<br>
+<hr width="75%">
+<br>
+
+<h2><u>Yearly  Revenue</u></h2>
+<section class="menu-content">
+ <div class="sub-menu">
+<button type="button" class="add-yearly-revenue-button" onclick="openAddForm('YearlyRevenue')">Add Yearly Revenue</button>
+</div>
+<div class="sub-menu">
+<button type="button" class="edit-yearly-revenue-button" onclick="openEditForm('YearlyRevenue')">Edit Yearly Revenue</button>
+</div>
+<div class="sub-menu">
+<button type="button" class="delete-yearly-revenue-button" onclick="openDeleteForm('YearlyRevenue')">Delete Yearly Revenue</button>
+</div>
+</section>
+<br>
+<br>
+<br>
+
+
+<dialog id="addEmployeeDialog">
+    <form id="addEmployeeForm" onsubmit="addEmployee(); return false;">
+        <label for="employeeid">Employee ID:</label>
+        <input type="text" id="employeeid" name="employeeid" required><br>
+
+        <label for="employeename">Employee Name:</label>
+        <input type="text" id="employeename" name="employeename" required><br>
+
+        <label for="team">Team:</label>
+        <input type="text" id="team" name="team" required><br>
+
+        <label for="salary">Salary:</label>
+        <input type="text" id="salary" name="salary" required><br>
+
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" name="dob" required><br>
+
+        <label for="experience">Experience:</label>
+        <input type="text" id="experience" name="experience" required><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br>
+
+        <label for="phno">Phone Number:</label>
+        <input type="text" id="phno" name="phno" required><br>
+
+        <button type="submit" class="yes">Add</button>
+        <button type="button" onclick="closeAddEmployeeForm()" class="no">Cancel</button>
+    </form>
+</dialog>
+
+<dialog id="editEmployeeDialog">
+    <form id="editEmployeeForm" onsubmit="editEmployee(); return false;">
+        <label for="editEmployeeId">Employee ID:</label>
+        <input type="text" id="editEmployeeId" name="editEmployeeId" required><br>
+
+        <label for="editField">Select Field:</label>
+        <select id="editField" name="editField">
+            <option value="id">Employee ID</option>
+            <option value="name">Employee Name</option>
+            <option value="team">Team</option>
+            <option value="salary">Salary</option>
+            <option value="dob">Date of Birth</option>
+            <option value="experience">Experience</option>
+            <option value="email">Email</option>
+            <option value="phoneno">Phone Number</option>
+        </select><br>
+
+        <label for="editValue">Enter New Value:</label>
+        <input type="text" id="editValue" name="editValue" required><br>
+
+        <button type="submit" class="yes">Edit</button>
+        <button type="button" onclick="closeEditEmployeeForm()" class="no">Cancel</button>
+    </form>
+</dialog>
+
+<dialog id="deleteEmployeeDialog">
+    <form id="deleteEmployeeForm" onsubmit="deleteEmployee(); return false;">
+        <label for="deleteEmployeeId">Employee ID:</label>
+        <input type="text" id="deleteEmployeeId" name="deleteEmployeeId" required><br>
+
+        <button type="submit" class="yes">Delete</button>
+        <button type="button" onclick="closeDeleteEmployeeForm()" class="no">Cancel</button>
+    </form>
+</dialog>
+<dialog id="addFinancialRatioDialog">
+    <form id="addFinancialRatioForm" onsubmit="addFinancialRatio(); return false;">         
+        <label for="companyId">Company ID:</label>
+        <input type="text" name="companyId" required><br>
+
+        <label for="companyName">Company Name:</label>
+        <input type="text" id="companyName" name="companyName" required><br>
+
+        <label for="revenue">Revenue:</label>
+        <input type="text" id="revenue" name="revenue" required><br>
+
+        <label for="netIncome">Net Income:</label>
+        <input type="text" id="netIncome" name="netIncome" required><br>
+
+        <label for="currentAssets">Current Assets:</label>
+        <input type="text" id="currentAssets" name="currentAssets" required><br>
+
+        <label for="currentLiabilities">Current Liabilities:</label>
+        <input type="text" id="currentLiabilities" name="currentLiabilities" required><br>
+
+        <label for="totalAssets">Total Assets:</label>
+        <input type="text" id="totalAssets" name="totalAssets" required><br>
+
+        <label for="totalLiabilities">Total Liabilities:</label>
+        <input type="text" id="totalLiabilities" name="totalLiabilities" required><br>
+
+        <label for="shareholdersEquity">Shareholders Equity:</label>
+        <input type="text" id="shareholdersEquity" name="shareholdersEquity" required><br>
+
+        <button type="button"  class="yes" onclick="addFinancialRatio()">Add</button>
+        <button type="button" class="no" onclick="closeAddForm('FinancialRatio')">Cancel</button>
+    </form>
+</dialog>
+
+<!-- Add Financial Data Dialog -->
+<dialog id="addFinancialDataDialog">
+    <form id="addFinancialDataForm" onsubmit="addFinancialData(); return false;">
+        <label for="financialDataMonth">Month:</label>
+        <input type="text" id="financialDataMonth" name="financialDataMonth" required><br>
+
+        <label for="financialDataRevenue">Revenue:</label>
+        <input type="text" id="financialDataRevenue" name="financialDataRevenue" required><br>
+
+        <label for="financialDataExpenses">Expenses:</label>
+        <input type="text" id="financialDataExpenses" name="financialDataExpenses" required><br>
+
+        <label for="financialDataProfit">Profit:</label>
+        <input type="text" id="financialDataProfit" name="financialDataProfit" required><br>
+
+        <button type="submit"  class="yes">Add</button>
+        <button type="button" class="no" onclick="closeAddForm('FinancialData')">Cancel</button>
+    </form>
+</dialog>
+
+<dialog id="addOperationalDataDialog">
+    <form id="addOperationalDataForm" onsubmit="addOperationalData(); return false;">
+        <label for="operationalDataMonth">Month:</label>
+        <input type="text" id="operationalDataMonth" name="operationalDataMonth" required><br>
+
+        <label for="productionOutput">Production Output:</label>
+        <input type="text" id="productionOutput" name="productionOutput" required><br>
+
+        <label for="efficiency">Efficiency:</label>
+        <input type="text" id="efficiency" name="efficiency" required><br>
+
+        <label for="inventoryLevels">Inventory Levels:</label>
+        <input type="text" id="inventoryLevels" name="inventoryLevels" required><br>
+
+        <label for="supplyChainPerformance">Supply Chain Performance:</label>
+        <input type="text" id="supplyChainPerformance" name="supplyChainPerformance" required><br>
+
+        <button type="submit" class="yes">Add</button>
+        <button type="button"  class="no" onclick="closeAddForm('OperationalData')">Cancel</button>
+    </form>
+</dialog>
+
+<dialog id="addProfitDataDialog">
+    <form action="profit_add.php" method="post">
+        <label for="profitDataMonth">Month:</label>
+        <input type="text" id="profitDataMonth" name="profitDataMonth" required><br>
+
+        <label for="profitDataProfit">Profit:</label>
+        <input type="text" id="profitDataProfit" name="profitDataProfit" required><br>
+
+        <input type="submit" class="yes"></button>
+        <button type="button" class="no" onclick="closeAddForm('ProfitData')">Cancel</button>
+    </form>
+</dialog>
+
+<!-- Edit Profit Data Dialog -->
+<dialog id="editProfitDataDialog">
+    <form action="profit_edit.php" method="post">
+        <label for="editProfitDataId">Month Id:</label>
+        <input type="text" id="editProfitDataId" name="editProfitDataId" required><br>
+        <label for="editProfitDataMonth">Month:</label>
+        <input type="text" id="editProfitDataMonth" name="editProfitDataMonth" required><br>
+
+        <label for="editProfitDataProfit">Profit:</label>
+        <input type="text" id="editProfitDataProfit" name="editProfitDataProfit" required><br>
+
+        <input type="submit" class="yes"></button>
+        <button type="button" class="no" onclick="closeEditForm('ProfitData')">Cancel</button>
+    </form>
+</dialog>
+
+<!-- Delete Profit Data Dialog -->
+<dialog id="deleteProfitDataDialog">
+    <form action="profit_delete.php" method="post">
+        <label for="deleteProfitDataId">Profit Data ID:</label>
+        <input type="text" id="deleteProfitDataId" name="deleteProfitDataId" required><br>
+
+        <input type="submit" class="yes"></button>
+        <button type="button"  class="no" onclick="closeDeleteForm('ProfitData')">Cancel</button>
+    </form>
+</dialog>
+
+<dialog id="addSalesDataDialog">
+    <form id="addSalesDataForm" onsubmit="addSalesData(); return false;">
+        <label for="salesDataMonth">Month:</label>
+        <input type="text" id="salesDataMonth" name="salesDataMonth" required><br>
+
+        <label for="sales">Sales:</label>
+        <input type="text" id="sales" name="sales" required><br>
+
+        <button type="submit"  class="yes">Add</button>
+        <button type="button"   class="no" onclick="closeAddForm('SalesData')">Cancel</button>
+    </form>
+</dialog>
+
+<!-- Add Yearly Revenue Dialog -->
+<dialog id="addYearlyRevenueDialog">
+    <form id="addYearlyRevenueForm" onsubmit="addYearlyRevenue(); return false;">
+        <label for="yearlyRevenue">Yearly Revenue:</label>
+        <input type="text" id="yearlyRevenue" name="yearlyRevenue" required><br>
+
+        <label for="year">Year:</label>
+        <input type="text" id="year" name="year" required><br>
+
+        <button type="submit"  class="yes">Add</button>
+        <button type="button"  class="no" onclick="closeAddForm('YearlyRevenue')">Cancel</button>
+    </form>
+</dialog>
+
+<dialog id="editFinancialRatioDialog">
+    <form id="editFinancialRatioForm" onsubmit="editFinancialRatio(); return false;">
+        <label for="editCompanyId">Company ID:</label>
+        <input type="text" id="editCompanyId" name="editCompanyId" required><br>
+
+        <label for="editCompanyName">Company Name:</label>
+        <input type="text" id="editCompanyName" name="editCompanyName" required><br>
+
+        <label for="editRevenue">Revenue:</label>
+        <input type="text" id="editRevenue" name="editRevenue" required><br>
+
+        <label for="editNetIncome">Net Income:</label>
+        <input type="text" id="editNetIncome" name="editNetIncome" required><br>
+
+        <label for="editCurrentAssets">Current Assets:</label>
+        <input type="text" id="editCurrentAssets" name="editCurrentAssets" required><br>
+
+        <label for="editCurrentLiabilities">Current Liabilities:</label>
+        <input type="text" id="editCurrentLiabilities" name="editCurrentLiabilities" required><br>
+
+        <label for="editTotalAssets">Total Assets:</label>
+        <input type="text" id="editTotalAssets" name="editTotalAssets" required><br>
+
+        <label for="editTotalLiabilities">Total Liabilities:</label>
+        <input type="text" id="editTotalLiabilities" name="editTotalLiabilities" required><br>
+
+        <label for="editShareholdersEquity">Shareholders Equity:</label>
+        <input type="text" id="editShareholdersEquity" name="editShareholdersEquity" required><br>
+
+        <button type="submit"  class="yes">Edit</button>
+        <button type="button"  class="no" onclick="closeEditForm('FinancialRatio')">Cancel</button>
+    </form>
+</dialog>
+
+<dialog id="editFinancialDataDialog">
+    <form id="editFinancialDataForm" onsubmit="editFinancialData(); return false;">
+	<label for="editFinancialDataid">Month  Id:</label>
+        <input type="text" id="editFinancialDataid" name="editFinancialDataid" required><br>
+
+        <label for="editFinancialDataMonth">Month:</label>
+        <input type="text" id="editFinancialDataMonth" name="editFinancialDataMonth" required><br>
+
+        <label for="editFinancialDataRevenue">Revenue:</label>
+        <input type="text" id="editFinancialDataRevenue" name="editFinancialDataRevenue" required><br>
+
+        <label for="editFinancialDataExpenses">Expenses:</label>
+        <input type="text" id="editFinancialDataExpenses" name="editFinancialDataExpenses" required><br>
+
+        <label for="editFinancialDataProfit">Profit:</label>
+        <input type="text" id="editFinancialDataProfit" name="editFinancialDataProfit" required><br>
+
+        <button type="submit"  class="yes">Edit</button>
+        <button type="button"  class="no" onclick="closeEditForm('FinancialData')">Cancel</button>
+    </form>
+</dialog>
+
+<dialog id="editOperationalDataDialog">
+    <form id="editOperationalDataForm" onsubmit="editOperationalData(); return false;">
+ <label for="editOperationalDataId">Month  Id:</label>
+        <input type="text" id="editOperationalDataId" name="editOperationalDataId" required><br>
+
+        <label for="editOperationalDataMonth">Month:</label>
+        <input type="text" id="editOperationalDataMonth" name="editOperationalDataMonth" required><br>
+
+        <label for="editProductionOutput">Production Output:</label>
+        <input type="text" id="editProductionOutput" name="editProductionOutput" required><br>
+
+        <label for="editEfficiency">Efficiency:</label>
+        <input type="text" id="editEfficiency" name="editEfficiency" required><br>
+
+        <label for="editInventoryLevels">Inventory Levels:</label>
+        <input type="text" id="editInventoryLevels" name="editInventoryLevels" required><br>
+
+        <label for="editSupplyChainPerformance">Supply Chain Performance:</label>
+        <input type="text" id="editSupplyChainPerformance" name="editSupplyChainPerformance" required><br>
+
+        <button type="submit"  class="yes">Edit</button>
+        <button type="button"  class="no" onclick="closeEditForm('OperationalData')">Cancel</button>
+    </form>
+</dialog>
+
+
+<!-- Edit Sales Data Dialog -->
+<dialog id="editSalesDataDialog">
+    <form id="editSalesDataForm" onsubmit="editSalesData(); return false;">
+  <label for="editSalesDataId">Id:</label>
+        <input type="text" id="editSalesDataId" name="editSalesDataId" required><br>
+
+        <label for="editSalesDataMonth">Month:</label>
+        <input type="text" id="editSalesDataMonth" name="editSalesDataMonth" required><br>
+
+        <label for="editSales">Sales:</label>
+        <input type="text" id="editSales" name="editSales" required><br>
+
+        <button type="submit"  class="yes">Edit</button>
+        <button type="button"  class="no" onclick="closeEditForm('SalesData')">Cancel</button>
+    </form>
+</dialog>
+
+
+<dialog id="editYearlyRevenueDialog">
+    <form id="editYearlyRevenueForm" method="post" action="edityr.php">
+        <label for="editYearlyRevenue">Yearly Revenue:</label>
+        <input type="text" id="editYearlyRevenue" name="editYearlyRevenue" required><br>
+
+        <label for="editYear">Year:</label>
+        <input type="text" id="editYear" name="editYear" required><br>
+
+        <input type="hidden" name="action" value="editYearlyRevenue">
+
+        <button type="submit"  class="yes">Edit</button>
+        <button type="button"  class="no" onclick="closeEditForm('YearlyRevenue')">Cancel</button>
+    </form>
+</dialog>
+
+<dialog id="deleteFinancialRatioDialog">
+    <form id="deleteFinancialRatioForm" onsubmit="deleteFinancialRatio(); return false;">
+        <label for="deleteFinancialRatioId">Company ID:</label>
+        <input type="text" id="deleteFinancialRatioId" name="deleteFinancialRatioId" required><br>
+
+        <button type="submit"  class="yes">Delete</button>
+        <button type="button"  class="no" onclick="closeDeleteForm('FinancialRatio')">Cancel</button>
+    </form>
+</dialog>
+
+<dialog id="deleteFinancialDataDialog">
+    <form id="deleteFinancialDataForm" onsubmit="deleteFinancialData(); return false;">
+        <label for="deleteFinancialDataId">Financial month Id:</label>
+        <input type="text" id="deleteFinancialDataId" name="deleteFinancialDataId" required><br>
+
+        <button type="submit"  class="yes">Delete</button>
+        <button type="button"  class="no" onclick="closeDeleteForm('FinancialData')">Cancel</button>
+    </form>
+</dialog>
+
+<dialog id="deleteOperationalDataDialog">
+    <form id="deleteOperationalDataForm" onsubmit="deleteOperationalData(); return false;">
+        <label for="deleteOperationalDataId">Operational Data ID:</label>
+        <input type="text" id="deleteOperationalDataId" name="deleteOperationalDataId" required><br>
+
+        <button type="submit" class="yes">Delete</button>
+        <button type="button" class="no" onclick="closeDeleteForm('OperationalData')">Cancel</button>
+    </form>
+</dialog>
+
+
+<!-- Delete Sales Data Dialog -->
+<dialog id="deleteSalesDataDialog">
+    <form id="deleteSalesDataForm" onsubmit="deleteSalesData(); return false;">
+        <label for="deleteSalesDataId">Sales Data ID:</label>
+        <input type="text" id="deleteSalesDataId" name="deleteSalesDataId" required><br>
+
+        <button type="submit"  class="yes">Delete</button>
+        <button type="button"  class="no" onclick="closeDeleteForm('SalesData')">Cancel</button>
+    </form>
+</dialog>
+
+<!-- Delete Yearly Revenue Dialog -->
+<dialog id="deleteYearlyRevenueDialog">
+    <form id="deleteYearlyRevenueForm" onsubmit="deleteYearlyRevenue(); return false;">
+        <label for="deleteYearlyRevenueId">Yearly Revenue ID:</label>
+        <input type="text" id="deleteYearlyRevenueId" name="deleteYearlyRevenueId" required><br>
+
+        <button type="submit" class="yes">Delete</button>
+        <button type="button"  class="no" onclick="closeDeleteForm('YearlyRevenue')">Cancel</button>
+    </form>
+</dialog>   
+ </main>
+<script>
+
+function openAddForm(table) {
+    document.getElementById('add' + table + 'Dialog').showModal();
+}
+
+function closeAddForm(table) {
+    document.getElementById('add' + table + 'Dialog').close();
+}
+
+function openEditForm(table) {
+    document.getElementById('edit' + table + 'Dialog').showModal();
+}
+
+function closeEditForm(table) {
+    document.getElementById('edit' + table + 'Dialog').close();
+}
+
+function openDeleteForm(table) {
+    document.getElementById('delete' + table + 'Dialog').showModal();
+}
+
+function closeDeleteForm(table) {
+    document.getElementById('delete' + table + 'Dialog').close();
+}
+
+function openAddEmployeeForm() {
+    document.getElementById('addEmployeeDialog').showModal();
+}
+
+function closeAddEmployeeForm() {
+    document.getElementById('addEmployeeDialog').close();
+}
+
+function openEditEmployeeForm() {
+    document.getElementById('editEmployeeDialog').showModal();
+}
+
+function closeEditEmployeeForm() {
+    document.getElementById('editEmployeeDialog').close();
+}
+
+function openDeleteEmployeeForm() {
+    document.getElementById('deleteEmployeeDialog').showModal();
+}
+
+function closeDeleteEmployeeForm() {
+    document.getElementById('deleteEmployeeDialog').close();
+}
+
+function addEmployee() {
+    var employeeid = document.getElementById('employeeid').value;
+    var employeename = document.getElementById('employeename').value;
+    var team = document.getElementById('team').value;
+    var salary = document.getElementById('salary').value;
+    var dob = document.getElementById('dob').value;
+    var experience = document.getElementById('experience').value;
+    var email = document.getElementById('email').value;
+    var phno = document.getElementById('phno').value;
+    
+    var formData = new FormData();
+    formData.append('employeeid', employeeid);
+    formData.append('employeename', employeename);
+    formData.append('team', team);
+    formData.append('salary', salary);
+    formData.append('dob', dob);
+    formData.append('experience', experience);
+    formData.append('email', email);
+    formData.append('phno', phno);
+    
+    var xhr = new XMLHttpRequest();
+    xhr.open('POST', 'cadd.php', true);
+    xhr.onload = function() {
+        if (xhr.status === 200)    {
+            alert(xhr.responseText);
+            closeAddEmployeeForm();
+        }
+    };
+    xhr.send(formData);
+}
+
+function editEmployee() {
+    var editEmployeeId = document.getElementById('editEmployeeId').value;
+    var editField = document.getElementById('editField').value;
+    var editValue = document.getElementById('editValue').value;
+    
+    var formData = new FormData();
+    formData.append('editEmployeeId', editEmployeeId);
+    formData.append('editField', editField);
+    formData.append('editValue', editValue);
+    
+    var xhr = new XMLHttpRequest();
+    xhr.open('POST', 'cadd.php', true);
+    xhr.onload = function() {
+        if (xhr.status === 200) {
+            alert(xhr.responseText);
+            closeEditEmployeeForm();
+        }
+    };
+    xhr.send(formData);
+}
+
+function deleteEmployee() {
+    var deleteEmployeeId = document.getElementById('deleteEmployeeId').value;
+    
+    var formData = new FormData();
+    formData.append('deleteEmployeeId', deleteEmployeeId);
+    
+    var xhr = new XMLHttpRequest();
+    xhr.open('POST', 'cadd.php', true);
+    xhr.onload = function() {
+        if (xhr.status === 200) {
+            alert(xhr.responseText);
+            closeDeleteEmployeeForm();
+        }
+    };
+    xhr.send(formData);
+}
+
+// Function to add financial ratio
+function addFinancialRatio() {
+    var formData = new FormData(document.getElementById("addFinancialRatioForm"));
+    formData.append("action", "addFinancialRatio");
+
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", "backend.php", true);
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === XMLHttpRequest.DONE) {
+            if (xhr.status === 200) {
+                alert(xhr.responseText);
+	closeAddForm('FinancialRatio');
+            } else {
+                alert('Error: ' + xhr.status);
+            }
+        }
+    };
+    xhr.send(formData);
+}
+
+// Function to add financial data
+function addFinancialData() {
+    var formData = new FormData(document.getElementById("addFinancialDataForm"));
+    formData.append("action", "addFinancialData");
+
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", "backend.php", true);
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === XMLHttpRequest.DONE) {
+            if (xhr.status === 200) {
+                alert(xhr.responseText);
+	closeAddForm('FinancialData');
+            } else {
+                alert('Error: ' + xhr.status);
+            }
+        }
+    };
+    xhr.send(formData);
+}
+
+function addOperationalData() {
+    var formData = new FormData(document.getElementById("addOperationalDataForm"));
+    formData.append("action", "addOperationaldata");
+
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", "backend.php", true);
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === XMLHttpRequest.DONE) {
+            if (xhr.status === 200) {
+                alert(xhr.responseText);
+	closeAddForm('OperationalData');
+            } else {
+                alert('Error: ' + xhr.status);
+            }
+        }
+    };
+    xhr.send(formData);
+}
+function editFinancialRatio() {
+    var formData = new FormData(document.getElementById("editFinancialRatioForm"));
+    formData.append("action", "editFinancialRatio");
+
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", "backend.php", true);
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === XMLHttpRequest.DONE) {
+            if (xhr.status === 200) {
+                alert(xhr.responseText);
+               closeEditForm('FinancialRatio');
+            } else {
+                alert('Error: ' + xhr.status);
+            }
+        }
+    };
+    xhr.send(formData);
+}
+
+
+//funtion to  edit operational
+function editOperationalData() {
+    var formData = new FormData(document.getElementById("editOperationalDataForm"));
+    formData.append("action", "editOperationalData");
+
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", "backend.php", true);
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === XMLHttpRequest.DONE) {
+            if (xhr.status === 200) {
+                alert(xhr.responseText);
+               closeEditForm('OperationalData');
+            } else {
+                alert('Error: ' + xhr.status);
+            }
+        }
+    };
+    xhr.send(formData);
+}
+
+// Function to edit financial data
+function editFinancialData() {
+    var formData = new FormData(document.getElementById("editFinancialDataForm"));
+    formData.append("action", "editFinancialData");
+
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", "backend.php", true);
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === XMLHttpRequest.DONE) {
+            if (xhr.status === 200) {
+                alert(xhr.responseText);
+                closeEditForm('FinancialData');
+            } else {
+                alert('Error: ' + xhr.status);
+            }
+        }
+    };
+    xhr.send(formData);
+}
+
+// Function to delete financial ratio
+function deleteFinancialRatio() {
+    var formData = new FormData(document.getElementById("deleteFinancialRatioForm"));
+    formData.append("action", "deleteFinancialRatio");
+
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", "backend.php", true);
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === XMLHttpRequest.DONE) {
+            if (xhr.status === 200) {
+                alert(xhr.responseText);
+	closeDeleteForm('FinancialRatio');
+            } else {
+                alert('Error: ' + xhr.status);
+            }
+        }
+    };
+    xhr.send(formData);
+}
+
+function deleteFinancialData() {
+    var formData = new FormData(document.getElementById("deleteFinancialDataForm"));
+    formData.append("action", "deleteFinancialData");
+
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", "backend.php", true);
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === XMLHttpRequest.DONE) {
+            if (xhr.status === 200) {
+                alert(xhr.responseText);
+	closeDeleteForm('FinancialData');
+            } else {
+                alert('Error: ' + xhr.status);
+            }
+        }
+    };
+    xhr.send(formData);
+}
+
+function deleteOperationalData() {
+    var formData = new FormData(document.getElementById("deleteOperationalDataForm"));
+    formData.append("action","deleteOperationalData");
+
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", "backend.php", true);
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === XMLHttpRequest.DONE) {
+            if (xhr.status === 200) {
+                alert(xhr.responseText);
+	closeDeleteForm('OperationalData');
+            } else {
+                alert('Error: ' + xhr.status);
+            }
+        }
+    };
+    xhr.send(formData);
+}
+
+ function ajaxRequest(url, method, data, callback) {
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState === XMLHttpRequest.DONE) {
+                if (xhr.status === 200) {
+                    callback(xhr.responseText);
+                } else {
+                    callback('Error: ' + xhr.status);
+                }
+            }
+        };
+        xhr.open(method, url, true);
+        if (method === 'POST') {
+            xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+            xhr.send(data);
+        } else {
+            xhr.send();
+        }
+    }
+
+    // Function to add sales data
+function addSalesData() {
+        var month = document.getElementById('salesDataMonth').value;
+        var sales = document.getElementById('sales').value;
+
+        var data = 'action=addSalesData&salesDataMonth=' + month + '&sales=' + sales;
+        ajaxRequest('act.php', 'POST', data, function(response) {
+            alert(response);
+            closeAddForm('SalesData');
+        });
+    }
+
+    // Function to add yearly revenue
+function addYearlyRevenue() {
+        var revenue = document.getElementById('yearlyRevenue').value;
+        var year = document.getElementById('year').value;
+
+        var data = 'action=addYearlyRevenue&yearlyRevenue=' + revenue + '&year=' + year;
+        ajaxRequest('act.php', 'POST', data, function(response) {
+            alert(response);
+            closeAddForm('YearlyRevenue');
+        });
+    }
+
+    // Function to edit sales data
+    function editSalesData() {
+        var id = document.getElementById('editSalesDataId').value;
+        var month = document.getElementById('editSalesDataMonth').value;
+        var sales = document.getElementById('editSales').value;
+
+        var data = 'action=editSalesData&id=' + id + '&editSalesDataMonth=' + month + '&editSales=' + sales;
+        ajaxRequest('act.php', 'POST', data, function(response) {
+            alert(response);
+            closeEditForm('SalesData');
+        });
+    }
+
+
+function deleteSalesData() {
+        var id = document.getElementById('deleteSalesDataId').value;
+
+        var data = 'action=deleteSalesData&deleteSalesDataId=' + id;
+        ajaxRequest('act.php', 'POST', data, function(response) {
+            alert(response);
+             closeDeleteForm('SalesData');
+        });
+    }
+
+    // Function to delete yearly revenue
+    function deleteYearlyRevenue() {
+        var year = document.getElementById('deleteYearlyRevenueId').value;
+
+        var data = 'action=deleteYearlyRevenue&deleteYearlyRevenueId=' + year;
+        ajaxRequest('act.php', 'POST', data, function(response) {
+            alert(response);
+           closeDeleteForm('YearlyRevenue');
+        });
+    }
+
+</script>
+</body>
+</html>

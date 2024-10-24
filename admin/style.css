@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700;800;900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Trebuchet MS', sans-serif;
+}
+
+.top-panel {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background: #2c2f3e;
+  color: #fff;
+}
+
+button {
+  background: blue;
+  color: #fff;
+  width :170px;
+  height: 55px;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+main{
+width: 100%;
+color: #fff;
+padding: 20px  20px;
+padding-left: 245px;
+font-family: var(--poppins);
+max-height: calc(100vh - 56px);
+overflow-y: auto;
+}
+
+
+.menu-content {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  justify-items: center;
+}
+
+.sub-menu{
+  background: #3ddfds;
+  box-shadow: 0 1px 5px rgba(104, 104, 104, 0.8);
+  width: 100%;
+  height: auto;
+  padding: 1rem;
+  text-align: center;
+  border-radius: 20px;
+  margin-top: 25px;
+  overflow: hidden; 
+}
+
+.sub-menu img {
+  max-height: 180px;
+  max-width: 180px;
+  min-height: 180px;
+  min-width: 180px;
+  border-radius: 10px; /* Add border-radius to the image */
+  margin-bottom: 5px; /* Add margin between image and text */
+}
+
+.sub-menu p{
+  font-size: o.9em; /* Increase font size for course name */
+  margin-bottom: 5px;
+  text-align: left;
+}
+
+.yes {
+  background-color: green; 
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  width: 45%; 
+  height: 20%;
+  margin-top: 4px; 
+  border: 2px solid green; 
+  border-radius: 5px; 
+  cursor: pointer;
+}
+
+.yes:hover {
+  box-shadow: 0 1px 5px rgba(104, 104, 104, 0.8);
+  background-color: #fff; 
+  border-color: green;
+  color:green;
+}
+
+.no {
+  background-color: red; 
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  width: 45%; 
+ height: 20%;
+  margin-top: 4px; 
+  border: 2px solid red; 
+  border-radius: 5px; 
+  cursor: pointer;
+}
+
+.no:hover {
+  background-color: #fff; 
+  color: red;
+    box-shadow: 0 1px 5px rgba(104, 104, 104, 0.8);
+  border-color: red;
+}
+
+.sub-menu:hover {
+  box-shadow: 0 10px 20px rgba(104, 104, 104, 2);
+}
+
+h2 {
+font-size: 25px;
+padding-left:31.5%;
+font-weight: 500;
+letter-spacing: 1px;
+text-transform: uppercase;
+white-space: nowrap;
+}
+
+form {
+            width: 400px;
+            padding: 12px;
+            margin: 0;
+        }
+label {
+            margin-bottom: 8px;
+        }
+input {
+            padding: 5px;
+            border-radius: 10px;
+            width: 50%;
+            align-item: right;
+            margin-bottom: 8px;
+        }
+dialog {
+            background-color: #3d4152;
+            color: #fff;
+            padding: 20px;
+            padding-left: 15px;
+            margin-left: 35%;
+            margin-top: 10%;
+  }
