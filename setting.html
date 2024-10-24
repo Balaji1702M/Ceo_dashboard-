@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+	<link rel="stylesheet" href="style.css">
+  <title>CEO Profile</title>
+  <style>      
+    #profile-pic {
+      width: 200px;
+      height: 200px;
+      margin-left: 4%;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    #profile-pic:hover {
+      transform: scale(1.2);
+    }
+
+    #full-size-modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.8);
+      align-items: center;
+      justify-content: center;
+    }
+
+    #full-size-image {
+      max-width: 80%;
+      max-height: 80%;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+<!-- SIDEBAR -->
+	<section id="sidebar">
+		<a href="ecom/index.php" class="brand">
+			<i class='bx bxs-smile'></i>
+			<span class="text">Nila Marketing</span>
+		</a>
+		<ul class="side-menu top">
+			<li>
+				<a href="dashboard.html">
+					<i class='bx bxs-dashboard' ></i>
+					<span class="text">Home</span>
+				</a>
+			</li>
+			<li>
+				<a href="analystics.html">
+					<i class='bx bxs-doughnut-chart' ></i>
+					<span class="text">Analytics</span>
+				</a>
+			</li>
+<li>
+				<a href="sales.html">
+					<i class='bx bxs-buildings' ></i>
+					<span class="text">Financial Metrices</span>
+				</a>
+			</li>
+
+<li>
+				<a href="marketing.html">
+					<i class='bx bxs-buildings' ></i>
+					<span class="text">Sales and Marketing</span>
+				</a>
+			</li>
+		<li>
+				<a href="operational.html">
+					<i class='bx bxs-buildings' ></i>
+					<span class="text">Operational Metrices</span>
+				</a>
+			</li>
+			<li>
+				<a href="email.html">
+					<i class='bx bxs-message-dots' ></i>
+					<span class="text">Message</span>
+				</a>
+			</li>
+			<li>
+				<a href="team.html">
+					<i class='bx bxs-group' ></i>
+					<span class="text">Team</span>
+				</a>
+			</li>
+<li>
+				<a href="Buisness.html">
+					<i class='bx bxs-buildings' ></i>
+					<span class="text">Buisness Ideas</span>
+				</a>
+			</li>
+		</ul>
+		<ul class="side-menu">
+<li>
+				<a href="ecom/index.php">
+					<i class='bx bxs-buildings' ></i>
+					<span class="text">Nila Marketing</span>
+				</a>
+			</li>
+			<li class="active">
+				<a href="setting.html">
+					<i class='bx bxs-cog' ></i>
+					<span class="text">Profile</span>
+				</a>
+			</li>
+			<li>
+				<a href="logout.php" class="logout">
+					<i class='bx bxs-log-out-circle' ></i>
+					<span class="text">Logout</span>
+				</a>
+			</li>
+		</ul>
+	</section>
+	<!-- SIDEBAR -->
+
+<section id="content">
+		<!-- NAVBAR -->
+		<nav>
+			<i class='bx bx-menu' ></i>
+			
+			
+			
+			<a href="setting.html" class="profile">
+				<img src="profile.jpg">
+			</a>
+		</nav>
+		<!-- NAVBAR -->
+
+<main>
+			<div class="head-title">
+				<div class="left">
+					<h1>Dashboard</h1>
+					<ul class="breadcrumb">
+						<li>
+							<a href="dashboard.html">Dashboard</a>
+						</li>
+						<li><i class='bx bx-chevron-right' ></i></li>
+						<li>
+							<a class="active" href="setting.html">Profile</a>
+						</li>
+					</ul>
+				</div>
+				
+			</div>
+<br>
+
+<font size="5">
+<div id="content">
+
+<font color="blue">
+  <h1>&nbsp&nbspCEO Profile</h1>
+</font>
+<br>
+<br>
+  <img id="profile-pic" src="profile.jpg" alt="Profile Picture" onclick="showFullSize()">
+<br><br>    
+<h2>Anushree M</h2>
+<pre> 
+<b>Date of Birth </b> 03 May 2003<br>
+<b>Email </b>Anushreemurugan05@gmail.com<br>
+<b>Founder of Nila Marketing</b><br>
+<b>Nationality </b>Indian<br>
+</pre>
+<br>
+<h2> Company Profile</h2><br>
+<pre>
+<b> Name </b> : Nila Marketing<br>
+<b> Founded by </b>: Anushree M<br>
+<b> Founded at </b> : 20,sept 2015<br>
+<b> Domain </b> : E-Commerce<br>
+<b> Motto  </b> : Best Deals @ Best Price<br>
+<b> Location</b> : Bargur,Tamilnadu.<br>
+</pre>
+    <h4><a href="logout.php"> logout</a></h4>
+  </div>
+</div>
+</font>
+<div id="full-size-modal" onclick="hideFullSize()">
+  <img id="full-size-image" src="profile-placeholder.jpg" alt="Full Size">
+</div>
+
+
+	</main>
+	
+</section>
+
+<script src="script.js"></script>
+
+<script>
+  function showFullSize() {
+    document.getElementById('full-size-modal').style.display = 'flex';
+  }
+
+  function hideFullSize() {
+    document.getElementById('full-size-modal').style.display = 'none';
+  }
+</script>
+</body>
+</html>
